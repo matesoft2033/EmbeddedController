@@ -82,7 +82,8 @@ This project is inspired by and learns from:
 
 ## 🤝 Contributing
 
-While this is primarily a personal learning project, suggestions and feedback are welcome! Feel free to open an issue if you notice any problems or have recommendations.
+Contributions are welcome!  
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening an issue or pull request.
 
 ## 📝 License
 
