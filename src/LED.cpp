@@ -21,3 +21,12 @@ void LED::toggle() {
     _state ? off() : on();
 }
 
+// Blink LED multiple times
+void LED::blink(int times, int delayMs) {
+    for(int i = 0; i < times; i++) {
+        toggle();
+        delay(delayMs);
+    }
+}
+
+
