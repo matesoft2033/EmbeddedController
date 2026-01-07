@@ -10,8 +10,7 @@ public:
     void on();
     void off();
     void toggle();
-
-    // add this method so main.cpp can check LED state
+    void blink(int times, int delayMs);
     bool isOn() const { return _state; }
 
 private:
