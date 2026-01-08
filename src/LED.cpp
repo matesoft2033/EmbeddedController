@@ -18,15 +18,37 @@ void LED::off() {
 }
 
 void LED::toggle() {
-    _state ? off() : on();
+    if (_state) off();
+    else on();
 }
 
-// Blink LED multiple times
+void LED::startBlink(int times, int intervalMs) {
+    _blinkTimes = times * 2;      
+    _blinkInterval = intervalMs;
+    _isBlinking = true;
+    _lastToggleTime = millis();
+}
+
+
+void LED::update() {
+    if (!_isBlinking) return;
+
+    unsigned long currentMillis = millis();
+    if (currentMillis - _lastToggleTime >= _blinkInterval) {
+        toggle();
+        _lastToggleTime = currentMillis;
+        _blinkTimes--;
+        if (_blinkTimes <= 0) {
+            _isBlinking = false;
+        }
+    }
+}
+
+
 void LED::blink(int times, int delayMs) {
     for(int i = 0; i < times; i++) {
         toggle();
         delay(delayMs);
     }
 }
-
 
